@@ -48,7 +48,7 @@ class MyAppState extends State<MyApp> {
             primarySwatch: Colors.deepPurple,
             canvasColor: backgroundColor,
           ),
-          home: TestPage()
+          home: WelcomePage()
           // home:TestPage()
         ));
   }
