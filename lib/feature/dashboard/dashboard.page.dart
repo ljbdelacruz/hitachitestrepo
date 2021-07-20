@@ -29,7 +29,7 @@ class DashboardPageState extends State<DashboardPage> {
     return widget.presenter.backgroundC.background(context, SingleChildScrollView(child:Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children:[
-        Image.asset("assets/icon.png", width:MediaQuery.of(context).size.width / 4),
+        widget.presenter.userInfoHeader(context),
     ])));
   }
 

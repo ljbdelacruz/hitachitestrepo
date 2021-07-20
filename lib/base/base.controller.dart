@@ -10,8 +10,10 @@ class BaseController extends GetxController{
   popUntil(BuildContext context, String myRoute){
       Navigator.of(context).popUntil((route) => route.settings.name == myRoute);
   }
+  popPage(BuildContext context){
+    Navigator.pop(context);
+  }
 
-  
   toWelcomePage(BuildContext context){
     Navigator.pushNamed(context, welcomeRoute);
   }

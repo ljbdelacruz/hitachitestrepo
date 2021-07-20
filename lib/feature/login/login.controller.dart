@@ -3,9 +3,9 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:hitachitest/base/base.controller.dart';
 
-class LoginController extends GetxController{
+class LoginController extends BaseController{
   TextEditingController emailC = new TextEditingController();
   TextEditingController passwordC = new TextEditingController();
   bool isValidEmail = false;
@@ -13,6 +13,6 @@ class LoginController extends GetxController{
   
 
   loginEvent(BuildContext context){
-
+    toDashboardPage(context);
   }
 }

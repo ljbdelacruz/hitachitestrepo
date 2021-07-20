@@ -7,7 +7,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:hitachitest/feature/welcome/welcome.presenter.dart';
 import 'package:hitachitest/util/color.util.dart';
 
 import 'login.presenter.dart';
@@ -37,7 +36,9 @@ class LoginPageState extends State<LoginPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children:[
-              Icon(Icons.arrow_back, color: nameColor),
+              InkWell(onTap:(){
+                widget.presenter.pageC.popPage(context);
+              }, child:Icon(Icons.arrow_back, color: nameColor)),
               Image.asset("assets/icon.png", width:MediaQuery.of(context).size.width / 4),
               SizedBox(width:10),
             ])
@@ -46,9 +47,9 @@ class LoginPageState extends State<LoginPage> {
         Text("Login", style: widget.presenter.styleUtil.textBold(fontSz: 17, tColor: nameColor)),
         SizedBox(height:MediaQuery.of(context).size.height * 0.01),
         Text("Enter your login details to\naccess your account", textAlign:TextAlign.center, style: widget.presenter.styleUtil.textNormal(fontSz: 13, tColor: secondary2Color)),
-
+        SizedBox(height:MediaQuery.of(context).size.height * 0.5),
         widget.presenter.buttonC.loginButton("LOG IN", context, (){
-          
+          widget.presenter.pageC.loginEvent(context);
         }, tColor: Colors.white),
 
 
